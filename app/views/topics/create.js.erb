@@ -1,0 +1,6 @@
+$('input[type="text"').val("");
+$('#container').remove();
+
+$('#topics').append("<%= j render 'topics/topic', topic: @topic %>");
+$('#search-results').append("<%= j render 'pages/search_results' %>")
+Newspaper.setLayout();

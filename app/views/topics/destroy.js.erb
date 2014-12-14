@@ -1,0 +1,5 @@
+$('#container').remove();
+$('#topic-<%= @topic.id %>').remove();
+
+$('#search-results').append("<%= j render 'pages/search_results' %>")
+Newspaper.setLayout();

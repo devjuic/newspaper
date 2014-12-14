@@ -1,0 +1,6 @@
+<li class="topic" id="topic-<%= topic.id %>">
+	<%= topic.name %>
+	<%= link_to topic_path(topic), method: :delete, remote: true do %>
+		<i class="fa fa-close pull-right"></i>
+	<% end %>
+</li>

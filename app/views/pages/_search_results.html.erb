@@ -1,0 +1,16 @@
+<div id="container">
+	<% @results.each do |result| %>
+		<div class="item <%= cycle('full-width', 'half-width left', 'half-width right') %>">
+			<div class="interior with-shadow">
+				<div class="image">
+					<%= image_tag(result.display_image) %>
+				</div>
+				<div class="text">
+					<p class="headline"><%= link_to result.title.html_safe, result.url, target: :blank %></p>
+					<p class="content"><%= result.content.html_safe %></p>
+					<p>Source: <%= result.publisher %></p>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
