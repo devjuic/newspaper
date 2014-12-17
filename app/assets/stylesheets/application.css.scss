@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6, p { font-family: "Roboto" }
 $green: #9CE863;
 $bright-green: #BBFF8F;
 $bright-green-hover: #B3FF7A;
-$baby-blue: #77C4D3;
+$baby-blue: #90EDFF;
 $off-white: #f5f5f5;
 $pink: #FF4871;
 $pink-hover: #FF6785;
@@ -124,13 +124,7 @@ img {
 	list-style: none;
 	margin-left: -40px;
 	.topic {
-		padding: 5px;
 		background-color: $light-gray;
-		color: black;
-		border-radius: 3px;
-		margin-top: 7px;
-		width: 100%;
-		font-weight: 300;
 		.fa-close {
 			color: $dark-gray;
 			margin-top: 2px;
@@ -148,5 +142,24 @@ img {
 	#popular-topics {
 		list-style: none;
 		margin-left: -40px;
+		.topic {
+			background-color: $baby-blue;
+			.fa-plus {
+				color: $dark-gray;
+				margin-top: 2px;
+				&:hover {
+					color: black;
+				}
+			}
+		}
 	}
+}
+
+.tag {
+	padding: 5px;
+	color: black;
+	border-radius: 3px;
+	margin-top: 7px;
+	width: 100%;
+	font-weight: 300;
 }

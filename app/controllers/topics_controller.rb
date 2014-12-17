@@ -12,8 +12,15 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic = Topic.find(params[:id])
-    @topic.destroy
+    current_user.topics.delete @topic
     @results = current_user.search_results_for_topics
+  end
+
+  def add_topic
+    @topic = Topic.find(params[:id])
+    current_user.topics << @topic
+    @results = current_user.search_results_for_topics
+    render :create
   end
 
   private

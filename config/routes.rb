@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
   resources :topics
+  get "/add-topic/:id" => 'topics#add_topic', as: :add_topic
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

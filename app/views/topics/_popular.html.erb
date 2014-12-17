@@ -1,5 +1,10 @@
 <ul id="popular-topics">
 	<% @popular.each do |topic| %>
-	    <li><%= topic.name %></li>
+	    <li class="topic tag">
+	    	<%= topic.name %>
+	    	<%= link_to add_topic_path(topic), remote: true do %>
+				<i class="fa fa-plus pull-right"></i>
+			<% end %>
+	    </li>
 	<% end %>
 </ul>
