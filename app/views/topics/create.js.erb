@@ -1,6 +1,9 @@
 $('input[type="text"').val("");
 $('#container').remove();
 
+$('#popular-topics').remove()
+
 $('#topics').append("<%= j render 'topics/topic', topic: @topic %>");
 $('#search-results').append("<%= j render 'pages/search_results' %>")
+$('#popular').append("<%= j render 'topics/popular' %>");
 Newspaper.setLayout();

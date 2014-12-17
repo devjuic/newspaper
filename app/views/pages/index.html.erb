@@ -8,6 +8,10 @@
         	<ul id="topics">
         		<%= render 'topics/list' %>
         	</ul>
+            <div id="popular">
+                <p><b>Most Popular</b></p>
+                <%= render 'topics/popular' %>
+            </div>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="search-results">
             <%= render 'search_results' %>

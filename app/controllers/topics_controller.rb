@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-
+  before_filter :set_popular
   respond_to :js
 
   def create
@@ -20,6 +20,10 @@ class TopicsController < ApplicationController
 
     def topic_params
       params.require(:topic).permit(:name)
+    end
+
+    def set_popular
+      @popular = Topic.top_5
     end
 
 end

@@ -1,5 +1,7 @@
 $('#container').remove();
 $('#topic-<%= @topic.id %>').remove();
+$('#popular-topics').remove()
 
 $('#search-results').append("<%= j render 'pages/search_results' %>")
+$('#popular').append("<%= j render 'topics/popular' %>");
 Newspaper.setLayout();
