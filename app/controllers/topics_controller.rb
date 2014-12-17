@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
   respond_to :js
 
   def create
-    @topic = Topic.new(topic_params)
+    @topic = Topic.where(topic_params).first_or_create
     if @topic.save
       current_user.topics << @topic
       @results = current_user.search_results_for_topics

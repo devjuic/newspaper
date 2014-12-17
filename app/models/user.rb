@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :topics
+  has_many :topic_subscriptions
+  has_many :topics, through: :topic_subscriptions
 
   def search_results_for_topics
     results = topics.map do |topic|

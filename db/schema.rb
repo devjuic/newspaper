@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212131117) do
+ActiveRecord::Schema.define(version: 20141217121011) do
+
+  create_table "topic_subscriptions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "topic_subscriptions", ["topic_id"], name: "index_topic_subscriptions_on_topic_id"
+  add_index "topic_subscriptions", ["user_id", "topic_id"], name: "index_topic_subscriptions_on_user_id_and_topic_id", unique: true
+  add_index "topic_subscriptions", ["user_id"], name: "index_topic_subscriptions_on_user_id"
 
   create_table "topics", force: true do |t|
     t.string   "name",       null: false
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
