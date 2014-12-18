@@ -2,7 +2,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <h1 id="logo">mxd<span class="poppy">news</span></h1>
-        	<%= form_for @topic, remote: true do |f| %>
+        	<%= form_for @topic do |f| %>
         		<%= f.text_field :name, placeholder: "Enter a topic" %>
         	<% end %>
         	<ul id="topics">

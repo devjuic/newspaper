@@ -2,7 +2,7 @@
 	<% @popular.each do |topic| %>
 	    <li class="topic tag">
 	    	<%= topic.name %>
-	    	<%= link_to add_topic_path(topic), remote: true do %>
+	    	<%= link_to add_topic_path(topic) do %>
 				<i class="fa fa-plus pull-right"></i>
 			<% end %>
 	    </li>

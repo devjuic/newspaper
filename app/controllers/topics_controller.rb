@@ -1,12 +1,13 @@
 class TopicsController < ApplicationController
   before_filter :set_popular
-  respond_to :js
+  # respond_to :js
 
   def create
     @topic = Topic.where(topic_params).first_or_create
     if @topic.save
       current_user.topics << @topic
       @results = current_user.search_results_for_topics
+      redirect_to root_path
     end
   end
 
@@ -14,13 +15,14 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     current_user.topics.delete @topic
     @results = current_user.search_results_for_topics
+    redirect_to root_path
   end
 
   def add_topic
     @topic = Topic.find(params[:id])
     current_user.topics << @topic
     @results = current_user.search_results_for_topics
-    render :create
+    redirect_to root_path
   end
 
   private
