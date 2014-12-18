@@ -1,6 +1,6 @@
-$(function() {
+function ready() {
 	Newspaper.setLayout();
-});
+}
 
 window.Newspaper = {};
 
@@ -14,5 +14,8 @@ Newspaper.setLayout = function() {
 		});
 	});
 }
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
 
 	
