@@ -18,4 +18,5 @@ class ApplicationController < ActionController::Base
       cookies.permanent[:user_uuid] = @uuid
     end
   end
+
 end

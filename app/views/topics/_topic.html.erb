@@ -1,5 +1,5 @@
 <li class="topic tag" id="topic-<%= topic.id %>">
-	<%= topic.name %>
+	<%= truncate(topic.name, length: 18) %>
 	<%= link_to topic_path(topic), method: :delete do %>
 		<i class="fa fa-close pull-right"></i>
 	<% end %>

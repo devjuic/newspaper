@@ -19,7 +19,11 @@ class TopicsController < ApplicationController
   end
 
   def add_topic
-    @topic = Topic.find(params[:id])
+    if params[:name].present?
+      @topic = Topic.where(name: params[:name]).first_or_create
+    else
+      @topic = Topic.find(params[:id])
+    end
     current_user.topics << @topic
     @results = current_user.search_results_for_topics
     redirect_to root_path

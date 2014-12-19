@@ -1,8 +1,8 @@
-<ul id="popular-topics">
-	<% @popular.each do |topic| %>
+<ul id="trending-topics">
+	<% @trending.each do |topic| %>
 	    <li class="topic tag">
 	    	<%= truncate(topic.name, length: 18) %>
-	    	<%= link_to add_topic_path(topic) do %>
+	    	<%= link_to add_topic_path(topic, name: topic.name) do %>
 				<i class="fa fa-plus pull-right"></i>
 			<% end %>
 	    </li>
